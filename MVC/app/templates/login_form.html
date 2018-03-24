@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+	<title>Adding Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style_0.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style_1.css')}}">
+</head>
+<body text = "Red" class="bg">
+<center>
+<h1>Student Information Form</h1>
+<h2>Fill everything below</h2>
+<form action = "{{url_for('adding')}}" method="post">
+	ID Number: 
+	<input type = "text" name = "ID_Number"><br><br>
+	First Name:
+	<input type= "text" name= "FirstName"><br><br>
+	Middle Name:
+	<input type= "text" name= "MiddleName"><br><br>
+	Last Name:
+	<input type= "text" name= "LastName"><br><br>
+	Gender(M/F):
+	<input type= "text" name= "Sex"><br><br>
+	Course:
+	<input type= "text" name= "Course"><br><br>
+	Year Level(1-5):
+	<input type= "text" name= "SchoolYear"><br><br>
+	<button class="button button3" onclick=submit>Submit</button>
+</form>
+<button class="button button3" onclick="window.location.href='/'">Back</button>
+</center>
+</body>
+</html>

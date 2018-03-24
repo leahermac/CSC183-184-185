@@ -1,0 +1,41 @@
+<!doctype html>
+<title>Records</title>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style_0.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style_1.css')}}">
+</head>
+   <body class="bg">
+
+      <h1>Student Courses</h1>
+      <div>
+            <table id="students">
+            <thead>
+                <th>Course ID</th>
+                <th>Last name</th>
+                <th>First name</th>
+                <th>Course Name</th>
+                <th>Year Level</th>
+                 <th>College</th>
+            </thead>
+
+            {% for row in rows %}
+                <tr>
+					<td>{{row["cour_id"]}}</td>
+               <td>{{row["l_name"]}}</td>
+               <td>{{row["f_name"]}}</td>
+               <td>{{row["cour_name"]}}</td>
+                <td>{{row["yr_lvl"]}}</td>
+                <td>{{row["col_sch"]}}</td>
+
+
+                </tr>
+                {% endfor %}
+                </table>
+        </div>
+        <button class="button button3" onclick="window.location.href='/list'">Back</button>
+        <button class="button button3" onclick="window.location.href='/'">Home</button>
+
+   </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style_0.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style_1.css')}}">
+</head>
+<body text= "Red" class="bg">
+<h2>
+	Enter the ID Number that you want to Update
+</h2>
+<form action= "{{url_for('update')}}" method = "post">
+	<label>ID Number:</label>
+	<input type= "text" name= "ID_Number"><br>
+	<h2>Enter Changes</h2>
+	<label>First name:</label>
+    <input type="text" name="FirstName" required><br>
+    <label>Middle name:</label>
+    <input type="text" name= "MiddleName" required><br><br>
+    <label>Last name:</label>
+    <input type="text" name="LastName" required><br><br>
+    <label>Gender(M/F):</label>
+    <input type="text" name = "Sex" required><br><br>
+    <label>Course:</label>
+    <input type="text" name= "Course" required><br><br>
+    <label>Year Level(1-5):</label>
+    <input type="text" name= "SchoolYear" required><br><br>
+    
+
+	<button class="button button3" onclick=submit>Confirm</button>
+	<h4>You may refer from the table below</h4>
+</form>
+
+<table id = students>
+	<thead>
+		<th> ID Number </th>
+		<th> First Name </th>
+		<th> Last Name </th>
+		<th> Course </th>
+		<th> Year Level </th>
+	</thead>
+	{% for row in rows %}
+	<tr>
+		<td> {{row["ID"]}} </td>
+		<td> {{row["f_name"]}} </td>
+		<td> {{row["l_name"]}} </td>
+		<td> {{row["Course"]}} </td>
+		<td> {{row["yr_lvl"]}} </td>
+	</tr>
+	{% endfor %}
+</table>
+</body>
+<br><br><a href= "/"><input type= "button" value= "Cancel" /></a>
+</html>

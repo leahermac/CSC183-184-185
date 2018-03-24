@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style_0.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style_1.css')}}">
+</head>
+<body text= "Red" class="bg">
+<h1>Enter the ID Number that you want to Delete</h1>
+<form action= "{{url_for('deleting_done')}}" method = "post">
+	ID Number:
+	<input type= "text" name= "ID_Number">
+	<button class="button button3" onclick=submit>Submit</button>
+	<h4>You may refer to the table below</h4>
+	<div>
+		<table id="students">
+			<thead>
+				<th> ID Number </th>
+				<th> First Name </th>
+				<th> Last Name </th>
+				<th> Course </th>
+			</thead>
+
+			{% for row in rows %}
+			<tr>
+				<td>{{row["ID"]}}</td>
+				<td>{{row["f_name"]}}</td>
+				<td>{{row["l_name"]}}</td>
+				<td>{{row["Course"]}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</form>
+</body>
+<br><br> 
+<button class="button button3" onclick="window.location.href='/'">Home</button>
+</html>

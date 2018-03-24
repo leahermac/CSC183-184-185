@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style_0.css')}}">
+<body text="Red" class="bg">
+<center>
+<br><br><h1>Enter what you want to Search</h1>
+<form action="{{url_for('searching')}}" method="post">
+<label> Enter Search</label>
+<input type="text" placeholder="Search.." name="ID_Number" required>
+<button class="button button3" onclick=submit>Submit</button>
+</form>
+<button class="button button3" onclick="window.location.href='/'">Home</button>
+</center>
+</body>
+</html>

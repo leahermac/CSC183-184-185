@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <title>Records</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style_0.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style_1.css')}}">
+
+</head>
+
+   <body class="bg">
+      <h1>STUDENT RECORD</h1>
+
+   <div>
+
+
+      <table id = students>
+         <thead>
+            <th><b>ID no</b></th>
+            <th><b>First Name</b></th>
+            <th><b>Last Name</b></th>
+            <th><b>Mid. Name</b></th>
+            <th><b>Sex</b></th>
+            <th><b>Course</b></th>
+            <th><b>Year Level</b></th>
+         </thead>
+
+         {% for row in rows %}
+            <tr>
+               <td>{{row["ID"]}}</td>
+               <td>{{row["f_name"]}}</td>
+               <td>{{row["l_name"]}}</td>
+               <td>{{row["m_name"]}}</td>
+               <td>{{row["Sex"]}}</td>
+               <td>{{row["Course"]}}</td>
+                <td>{{row["Yr_Lvl"]}}</td>
+
+            </tr>
+         {% endfor %}
+        </table><br><br>
+   </div>
+
+         <button class="button button3" onclick="window.location.href='/CourseTable'">Student Courses</button>
+            <button class="button button3" onclick="window.location.href='/'">Home</button>
+
+
+
+
+   </body>
+</html>
